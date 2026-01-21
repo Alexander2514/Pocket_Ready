@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Compass, ShoppingCart } from 'lucide-react'; // Iconos de ejemplo
+import { Compass, ShoppingCart } from 'lucide-react'; 
 
 const Navbar = () => {
   return (
@@ -24,7 +24,7 @@ const Navbar = () => {
               <Link href="/" className="hover:text-safety-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">
                 Home
               </Link>
-              <Link href="#productos" className="hover:text-safety-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="#Catalog" className="hover:text-safety-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">
                 Catalog
               </Link>
               <Link href="#about" className="text-text-muted hover:text-safety-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">

@@ -18,20 +18,40 @@ export const metadata: Metadata = {
 
   metadataBase: new URL('http://pocket-ready.com'), 
     // Título dinámico para SEO
+    
+    
+    
 
   title: {
-    default: "PocketReady | Strategic Survival & Tactical Gear",
+    default: "Survival Gear & Tactical Equipment for Everyday Carry | PocketReady",
     template: "%s | PocketReady"
   },
   description: "Your primary loadout for high-stakes environments. Curated tactical intelligence and professional-grade survival hardware for the modern operator.",
-  keywords: ["tactical gear", "survival kit", "edc tools", "mission essentials", "professional hardware"],
+  // keywords: ["tactical gear", "survival kit", "edc tools", "mission essentials", "professional hardware"],
+keywords: [
+  "survival gear",
+  "tactical gear",
+  "edc gear",
+  "emergency preparedness",
+  "outdoor survival equipment",
+  "everyday carry tools",
+  "tactical gear",
+  'survival kit',
+  'edc tools',
+  'mission essentials',
+  "professional hardware"
+],
+
+
+
+
   authors: [{ name: "PocketReady Team" }],
   
   // Metadatos para Facebook/WhatsApp
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://pocket-ready.com/", // Cambia por tu dominio real
+    url: "https://pocket-ready.com/", 
     siteName: "PocketReady",
     title: "PocketReady | Strategic Survival Gear",
     description: "High-performance solutions for high-stakes environments.",
@@ -64,6 +84,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen flex flex-col bg-[#080808] text-zinc-400`} suppressHydrationWarning>
+        
+
         <Navbar />
         <main className="flex-grow">
           {children}

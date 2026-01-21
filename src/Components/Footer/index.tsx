@@ -28,9 +28,9 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               
-          <a href="https://tiktok.com/@tuusuario" target="_blank" rel="noopener noreferrer">
+          
         <TikTokIcon className="text-zinc-500 hover:text-white transition-colors cursor-pointer" />
-        </a>
+        
               
               
               <Instagram className="hover:text-white cursor-pointer transition-colors" size={20} />
@@ -47,7 +47,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Columna 3: Legal */}
           <div>
              <h3 className="text-white font-bold mb-4 uppercase text-sm">Legal</h3>
              <ul className="space-y-2 text-sm">
@@ -57,7 +56,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Disclaimer Importante */}
         <div className="border-t border-zinc-900 pt-8 text-xs text-zinc-600 text-justify">
           <p>
             PocketReady is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate, we earn from qualifying purchases at no extra cost to you.

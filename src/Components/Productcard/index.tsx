@@ -1,4 +1,3 @@
-// Components/ProductCard/index.tsx
 import { ShoppingCart, Star, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { Product } from '../../types/Product';
@@ -16,7 +15,6 @@ export default function ProductCard({ title, price, image, rating, link, id, is_
   return (
     <div className="bg-tactical-card border-zinc-800 rounded-xl overflow-hidden hover:border-safety-orange/50 transition-all duration-500 group flex flex-col h-full relative">
       
-      {/* FIX: Badge Featured corregido */}
       {is_featured && (
         <div className="absolute top-3 left-3 z-10 flex items-center gap-1 bg-safety-orange text-white text-[9px] font-black px-2 py-1 rounded shadow-xl uppercase">
           <Zap size={10} fill="currentColor" /> Featured Gear
