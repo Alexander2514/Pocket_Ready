@@ -1,81 +1,65 @@
 // src/app/Product/[id]/page.tsx
 import { getProductById } from "../../../lib/db";
 import { notFound } from "next/navigation";
-import { CheckCircle, Shield, Truck } from "lucide-react";
-
-const cleanImageUrl = (urlData: any): string => {
-  if (Array.isArray(urlData)) return urlData[0];
-  if (typeof urlData === 'string') {
-    return urlData.replace(/[\[\]"']/g, '').split(',')[0].trim();
-  }
-  return '/placeholder.png';
-};
-
+import { Shield, Zap, Truck, RotateCcw, Package, Globe } from "lucide-react";
+import ImageGallery from "./ImageGallery";
 
 export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
-  // 1. Desenvolver la promesa de params
   const { id } = await params; 
-  
-  // 2. Usar el id para buscar el producto
   const product = await getProductById(id);
-
   if (!product) return notFound();
 
-  const mainImage = cleanImageUrl(product.image_url);
+  const images = Array.isArray(product.image_url) ? product.image_url : [product.image_url];
+
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        
-        {/* Columna Izquierda: Imagen */}
-        <div className="bg-white rounded-2xl p-8 flex items-center justify-center border border-tactical-border">
-            <img 
-              src={mainImage} 
-              alt={product.title_en} 
-              className="max-h-[500px] w-auto object-contain" 
-            />
-        </div>
-
-        {/* Columna Derecha: Información y Venta */}
-        <div className="flex flex-col justify-center">
-          <span className="text-safety-orange font-bold tracking-widest uppercase text-sm mb-2">
-            {product.category}
-          </span>
+    <div className="min-h-screen bg-[#181c2d] text-zinc-300 pt-24 pb-12 px-4">
+      <div className="max-w-5xl mx-auto"> 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center bg-none">
           
-          <h1 className="text-4xl md:text-5xl font-black text-text-primary mb-6 leading-tight">
-            {product.title_en}
-          </h1>
-
-          <div className="text-3xl font-bold text-white mb-6">
-            ${product.price} <span className="text-text-muted text-lg font-normal">USD</span>
+          <div className="w-full brightness-75">
+             <ImageGallery images={images} title={product.title_en} />
           </div>
 
-          <p className="text-text-muted text-lg leading-relaxed mb-8 border-l-4 border-safety-orange pl-4">
-            {product.description_en}
-          </p>
+          <div className="flex flex-col">
+  <span className="text-safety-orange/60 font-mono text-[9px] tracking-[0.5em] uppercase mb-1">
+    // INTEL_REPORT_{id.slice(0,4)}
+  </span>
+  
+  <h1 className="text-xl md:text-2xl font-black text-zinc-300 mb-4 leading-tight uppercase italic tracking-tight">
+    {product.title_en}
+  </h1>
 
-          {/* Botón de compra gigante */}
-          <a 
-            href={product.amazon_link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full bg-safety-orange hover:bg-orange-600 text-white text-center font-black text-xl py-4 rounded-xl transition-all shadow-lg shadow-orange-900/20 mb-8 block"
-          >
-            Comprar ahora en Amazon
-          </a>
+  <div className="flex items-baseline gap-2 mb-6">
+    <span className="text-3xl font-light text-zinc-100">${product.price}</span>
+    <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">USD</span>
+  </div>
 
-          {/* Sellos de confianza (Copywriting táctico) */}
-          <div className="grid grid-cols-2 gap-4 text-sm text-text-muted">
-            <div className="flex items-center gap-2">
-              <Shield className="text-safety-orange" size={20} />
-              <span>Garantía de calidad</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Truck className="text-safety-orange" size={20} />
-              <span>Envío rápido (Prime)</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="text-safety-orange" size={20} />
-              <span>Probado en campo</span>
+  <p className="text-zinc-400 text-sm leading-relaxed mb-8 border-l border-zinc-800/50 pl-4 italic font-light">
+    {product.description_en}
+  </p>
+
+            <a 
+              href={product.amazon_link}
+              target="_blank"
+              className="w-full bg-safety-orange hover:bg-orange-600 text-white text-center font-bold text-sm py-4 rounded-lg transition-all duration-300 uppercase tracking-widest shadow-lg shadow-orange-900/20"
+            >
+              buy on Amazon
+            </a>
+
+            
+            <div className="grid grid-cols-2 gap-y-4 mt-12 pt-8 border-t border-zinc-900">
+              <div className="flex items-center gap-2 text-[9px] uppercase font-bold text-zinc-500">
+                <Shield className="text-safety-orange/60" size={14} /> Quality Verified
+              </div>
+              <div className="flex items-center gap-2 text-[9px] uppercase font-bold text-zinc-500">
+                <Truck className="text-safety-orange/60" size={14} /> Global Logistics
+              </div>
+              <div className="flex items-center gap-2 text-[9px] uppercase font-bold text-zinc-500">
+                <RotateCcw className="text-safety-orange/60" size={14} /> Return Protocol
+              </div>
+              <div className="flex items-center gap-2 text-[9px] uppercase font-bold text-zinc-500">
+                <Globe className="text-safety-orange/60" size={14} /> Tactical Supply
+              </div>
             </div>
           </div>
         </div>

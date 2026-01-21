@@ -1,10 +1,14 @@
+export const revalidate = 0; // <--- ESTA LÍNEA OBLIGA A REVISAR DATOS NUEVOS SIEMPRE
+
+
+
+
 import { supabase } from "../utils/client";
 
-// Función para traer TODOS los productos (para la landing)
 export interface Product {
   id: string;
   title_es: string;
-  title_en: string; // Asumiendo que ya creaste las columnas dobles
+  title_en: string; 
   description_es: string;
   description_en: string;
   price: number;
@@ -17,13 +21,13 @@ export async function getAllProducts() {
   const { data, error } = await supabase
     .from("products")
     .select('id,title_en,description_en,price,image_url,amazon_link,rating,is_featured')    
-    .order("created_at", { ascending: true });
+    .order("is_featured", { ascending: false });
 
   if (error) throw new Error(error.message);
+  
   return data;
 }
 
-// Función para traer UN SOLO producto (para la vista de detalle)
 export async function getProductById(id: string) {
   const { data, error } = await supabase
     .from("products")

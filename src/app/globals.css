@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* Fondo principal oscuro */
   --color-tactical-bg: #0f172a;
   /* Fondo para tarjetas o secciones */
   --color-tactical-card: #1e293b;
@@ -15,12 +14,10 @@
   --color-text-muted: #94a3b8;
 }
 
-/* Aplicar el fondo base al body */
 @layer base {
   body {
     background-color: var(--color-tactical-bg);
     color: var(--color-text-primary);
-    /* Patrón de fondo sutil */
     background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 20px 20px;
   }
