@@ -36,15 +36,5 @@ High-Resolution Media Handling: Optimized image galleries with automated rotatio
 
 Data Integrity: Strict JSON sanitization to ensure seamless Server and Client Component communication
 
-📁 Repository Overview
-├── src/
-│   ├── app/        # Next.js App Router
-│   ├── components/ # Reusable UI components
-│   ├── lib/        # Database logic (Supabase)
-│   └── styles/     
-├── public/         
-└── tailwind.config.ts
-
-
 ⚡️ System Status: Operational
 The platform is currently in active deployment.
