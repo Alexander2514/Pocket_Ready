@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Website: https://pocket-ready.com/
 
-## Getting Started
+⚡️ POCKETREADY | Tactical Gear & Intelligence Platform
 
-First, run the development server:
+PocketReady is a performance-driven eCommerce and intelligence platform built for modern preparedness. The platform curates tactical equipment and survival intelligence through a structured, data-focused digital experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🎯 Mission & Identity
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+PocketReady operates under the “Gray Man” philosophy: advanced readiness with minimal visibility.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Design Language: Low-profile aesthetics, matte finishes, and mission-critical functionality.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Interface Style: A refined Tactical Noir system—high contrast, industrial layouts, and authoritative typography inspired by military-grade software.
 
-## Learn More
+Audience Focus: Preparedness, survival, and Everyday Carry (EDC) enthusiasts.
 
-To learn more about Next.js, take a look at the following resources:
+🛠 Technology Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Built for speed, stability, and scalability:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Frontend: Next.js 15+ (App Router) with server-side rendering
 
-## Deploy on Vercel
+Styling: Tailwind CSS with a custom tactical design system
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Backend: Supabase (PostgreSQL) for real-time data operations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Animations: Framer Motion and custom CSS transitions
+
+Language: TypeScript for type-safe, production-grade code
+
+🚀 Core Capabilities
+
+Intelligence Reports: Modular content delivery system with dynamic grid layouts
+
+High-Resolution Media Handling: Optimized image galleries with automated rotation and responsive scaling
+
+Data Integrity: Strict JSON sanitization to ensure seamless Server and Client Component communication
+
+⚡️ System Status: Operational
+The platform is currently in active deployment.
