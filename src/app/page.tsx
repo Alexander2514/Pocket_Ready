@@ -1,12 +1,12 @@
 import { ShieldAlert, Crosshair, Map, Zap, BookOpen, Terminal,Activity,Eye,AlertTriangle } from "lucide-react";
 import ProductCard from "../Components/Productcard";
 import { getAllProducts } from "../lib/db";
-
+import { intelReports } from "./intelreports";
 export default async function Home() {
   const products = await getAllProducts();
   
   return (
-    <main className="bg-black min-h-screen text-white">
+    <main className="bg-zinc-900 min-h-screen text-white">
       
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1504194103304-47b99fb9c53c?q=80&w=2070')] bg-cover bg-center grayscale" />
@@ -59,7 +59,7 @@ export default async function Home() {
              <div className="h-px w-12 bg-orange-500" />
              <h2 className="text-sm font-mono text-orange-500 tracking-[0.3em] uppercase">PRIMARY LOADOUT //</h2>
           </div>
-          <h3 className="text-5xl font-black uppercase italic"> Essential Deployments</h3>
+          <h3 className="text-4xl font-black uppercase italic text-zinc-300 "> Essential Deployments</h3>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -99,31 +99,69 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-zinc-900 py-24 border-t border-zinc-800">
-        <div className="max-w-7xl mx-auto px-4">
-           <div className="flex justify-between items-end mb-12">
-              <div>
-                <h2 className="text-3xl font-black uppercase italic">Field Reports</h2>
-                <p className="text-zinc-500 text-sm font-mono uppercase">Intel, Tactics & Reviews</p>
-              </div>
-              <button className="text-xs font-bold uppercase border-b border-orange-500 text-orange-500 pb-1">View All Logs</button>
-           </div>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="group cursor-pointer">
-                 <div className="h-48 bg-zinc-800 mb-4 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1533675116901-706796c34f0e?q=80&w=2070" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                 </div>
-                 <h4 className="text-xl font-bold uppercase group-hover:text-orange-500 transition-colors">Top 5 Blades for Urban Survival</h4>
-                 <p className="text-zinc-500 text-sm mt-2">Critical intel on blade geometry and steel composition for the daily operator...</p>
-              </div>
-              <div className="group cursor-pointer">
-                 <div className="h-48 bg-zinc-800 mb-4 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1590234710161-04285f57fc1c?q=80&w=2070" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                 </div>
-                 <h4 className="text-xl font-bold uppercase group-hover:text-orange-500 transition-colors">Water Purification Protocols</h4>
-                 <p className="text-zinc-500 text-sm mt-2">When the grid goes down, hydration is your first priority. Here is how to stay safe...</p>
-              </div>
-           </div>
+      <section className="py-24 border-t border-zinc-900 bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          
+          {/* Encabezado de la Sección */}
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter text-white mb-2">
+                Field Reports
+              </h2>
+              <p className="text-safety-orange font-mono text-sm tracking-[0.3em] uppercase opacity-80">
+                // INTEL, TACTICS & REVIEWS
+              </p>
+            </div>
+            
+            <a href="/blog" className="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-safety-orange transition-colors">
+              View All Logs
+              <span className="block h-[1px] w-8 bg-zinc-700 group-hover:bg-safety-orange transition-colors" />
+            </a>
+          </div>
+
+          {/* Grid de Artículos (Dinámico) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {intelReports.map((report) => (
+              <a 
+                key={report.id} 
+                href={report.link}
+                target="_blank" // Abre en pestaña nueva si son links externos
+                className="group block h-full bg-zinc-900/30 border border-zinc-800/50 hover:border-safety-orange/50 transition-all duration-500 overflow-hidden rounded-sm"
+              >
+                {/* Contenedor de Imagen */}
+                <div className="relative h-64 overflow-hidden">
+                  <div className="absolute inset-0 bg-safety-orange/10 opacity-0 group-hover:opacity-20 transition-opacity z-10 mix-blend-overlay" />
+                  <img 
+                    src={report.image} 
+                    alt={report.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  />
+                  {/* Etiqueta de Categoría Flotante */}
+                  <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm border border-zinc-700 px-3 py-1">
+                    <span className="text-[9px] font-black text-safety-orange uppercase tracking-widest">
+                      {report.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Contenido del Texto */}
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-white uppercase leading-none mb-4 group-hover:text-safety-orange transition-colors italic">
+                    {report.title}
+                  </h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed line-clamp-3">
+                    {report.excerpt}
+                  </p>
+                  
+                  <div className="mt-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase">
+                    <span>Read Protocol</span>
+                    <div className="w-2 h-2 bg-zinc-800 group-hover:bg-safety-orange rounded-full transition-colors" />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+          
         </div>
       </section>
 

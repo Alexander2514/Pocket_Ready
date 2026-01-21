@@ -16,6 +16,7 @@ export interface Product {
   amazon_link: string;
   rating: number;
   category: string;
+  is_featured:boolean;
 }
 export async function getAllProducts() {
   const { data, error } = await supabase

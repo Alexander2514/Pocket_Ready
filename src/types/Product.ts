@@ -5,4 +5,5 @@ export interface Product {
   rating: number;
   link: string;
   id:string;
+  is_featured:boolean;
 }

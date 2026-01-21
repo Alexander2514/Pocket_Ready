@@ -15,7 +15,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  // Título dinámico para SEO
+
+  metadataBase: new URL('http://pocket-ready.com'), 
+    // Título dinámico para SEO
+
   title: {
     default: "PocketReady | Strategic Survival & Tactical Gear",
     template: "%s | PocketReady"

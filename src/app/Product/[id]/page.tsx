@@ -13,28 +13,30 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
 
   return (
     <div className="min-h-screen bg-[#181c2d] text-zinc-300 pt-24 pb-12 px-4">
-      <div className="max-w-5xl mx-auto"> 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center bg-none">
-          
-          <div className="w-full brightness-75">
-             <ImageGallery images={images} title={product.title_en} />
-          </div>
+      
+<div className="max-w-7xl mx-auto px-4 lg:px-8"> 
+  
+<div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-start bg-none">
 
-          <div className="flex flex-col">
-  <span className="text-safety-orange/60 font-mono text-[9px] tracking-[0.5em] uppercase mb-1">
+  <div className="w-full brightness-90 lg:pr-10"> 
+    <ImageGallery images={images} title={product.title_en} />
+  </div>
+
+          <div className="flex flex-col justify-center pt-8">
+  <span className="text-safety-orange/60 font-mono text-sm tracking-[0.5em] uppercase mb-4 opacity-70">
     // INTEL_REPORT_{id.slice(0,4)}
   </span>
   
-  <h1 className="text-xl md:text-2xl font-black text-zinc-300 mb-4 leading-tight uppercase italic tracking-tight">
+  <h1 className="text-3xl md:text-5xl xl:text-5xl font-black leading-none italic uppercase tracking-tighter mb-8">
     {product.title_en}
   </h1>
 
   <div className="flex items-baseline gap-2 mb-6">
-    <span className="text-3xl font-light text-zinc-100">${product.price}</span>
+    <span className="text-3xl xl:text-3xl font-light tracking-tighter italic text-zinc-300">${product.price}</span>
     <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">USD</span>
   </div>
 
-  <p className="text-zinc-400 text-sm leading-relaxed mb-8 border-l border-zinc-800/50 pl-4 italic font-light">
+  <p className="text-zinc-400 ttext-base lg:text-lg leading-relaxed mb-12 border-l-2 border-safety-orange/30 pl-6 italic max-w-2xl font-light">
     {product.description_en}
   </p>
 
@@ -65,5 +67,6 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
         </div>
       </div>
     </div>
+    
   );
 }
