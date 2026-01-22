@@ -25,7 +25,7 @@ const Navbar = () => {
                 Home
               </Link>
               <Link href="#Catalog" className="hover:text-safety-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">
-                Catalog
+                Gear
               </Link>
               <Link href="#about" className="text-text-muted hover:text-safety-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">
                 About us

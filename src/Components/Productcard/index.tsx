@@ -13,6 +13,9 @@ export default function ProductCard({ title, price, image, rating, link, id, is_
   const imageToShow = getImageUrl(image);
 
   return (
+    
+
+
     <div className="bg-tactical-card border-zinc-800 rounded-xl overflow-hidden hover:border-safety-orange/50 transition-all duration-500 group flex flex-col h-full relative">
       
       {is_featured && (
@@ -58,5 +61,7 @@ export default function ProductCard({ title, price, image, rating, link, id, is_
         </div>
       </div>
     </div>
+
+    
   );
 }
