@@ -98,7 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
 
 
-    //GA4
+    
     <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-78W3ZQVPE2"
           strategy="afterInteractive" 
