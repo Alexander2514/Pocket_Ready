@@ -130,7 +130,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 
 
-//meta facebook pixel
         <Script id="fb-pixel" strategy="afterInteractive">
   {`
     !function(f,b,e,v,n,t,s)
