@@ -5,7 +5,7 @@ import { FieldReports } from "../Components/FieldReports";
 import { EdcDoctrine } from "../Components/EdcDoctrine";
 import { SituationalAwareness } from "../Components/SituationalAwareness";
 import Link from "next/link";
-
+export const revalidate = 60; // Actualiza los datos cada 60 segundos
 export default async function Home() {
   const products = await getAllProducts();
   

@@ -3,15 +3,85 @@ import { getProductById } from "../../../lib/db";
 import { notFound } from "next/navigation";
 import { Shield, Zap, Truck, RotateCcw, Package, Globe } from "lucide-react";
 import ImageGallery from "./ImageGallery";
+import Script from "next/script";
 
+
+export const revalidate = 60; // Actualiza los datos cada 60 segundos
 export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
+
   const { id } = await params; 
   const product = await getProductById(id);
   if (!product) return notFound();
 
   const images = Array.isArray(product.image_url) ? product.image_url : [product.image_url];
 
+  
+
   return (
+    <>
+
+    <Script
+  id="json-ld-product"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": product.title_en,
+      "image": images,
+      "description": product.description_en,
+      "sku": id,
+      "brand": {
+        "@type": "Brand",
+        "name": "PocketReady"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": product.amazon_link,
+        "priceCurrency": "USD",
+        "price": product.price,
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Amazon"
+        }
+      }
+    })
+  }}
+/>
+
+<Script
+  id="json-ld-breadcrumb-product"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://pocket-ready.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tactical Gears",
+          "item": "https://pocket-ready.com/gears"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": product.title_en,
+          "item": `https://pocket-ready.com/product/${id}`
+        }
+      ]
+    })
+  }}
+/>
+
+
     <div className="min-h-screen bg-[#181c2d] text-zinc-300 pt-24 pb-12 px-4">
       
 <div className="max-w-7xl mx-auto px-4 lg:px-8"> 
@@ -67,6 +137,6 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
         </div>
       </div>
     </div>
-    
+    </>
   );
 }

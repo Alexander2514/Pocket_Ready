@@ -46,7 +46,6 @@ export function FieldReports(){
               className="w-full h-full object-cover transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-110"
             />
             
-            {/* Badge táctico mejorado */}
             <div className="absolute top-4 left-4 z-30">
               <span className="bg-black/80 backdrop-blur-md border border-zinc-700 px-3 py-1 text-[9px] font-black text-safety-orange uppercase tracking-[0.2em]">
                 {report.category}
@@ -62,7 +61,6 @@ export function FieldReports(){
               {report.excerpt}
             </p>
             
-            {/* Indicador de acción */}
             <div className="mt-6 flex items-center gap-2">
               <div className="h-[1px] w-8 bg-zinc-800 group-hover:w-12 group-hover:bg-safety-orange transition-all duration-500" />
               <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest group-hover:text-zinc-400">

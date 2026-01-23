@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     images: ['https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/ImgProducts.png'], 
   },
 };
-
+export const revalidate = 60; // Actualiza los datos cada 60 segundos
 export default async  function Gears() {
 
   const products = await getAllProducts();
