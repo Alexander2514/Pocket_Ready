@@ -28,7 +28,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
       "@context": "https://schema.org",
       "@type": "Product",
       "name": product.title_en,
-      "image": images,
+      "image": images[0],
       "description": product.description_en,
       "sku": id,
       "brand": {

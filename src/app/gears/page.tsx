@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'POCKETREADY Arsenal | All Products',
     description: 'Direct access to our complete tactical equipment inventory.',
-    images: ['https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/ImgProducts.png'], 
+    images: ['https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/FullAresenalView.png'], 
   },
 };
 export const revalidate = 60; // Actualiza los datos cada 60 segundos

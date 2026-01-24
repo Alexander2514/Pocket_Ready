@@ -48,7 +48,7 @@ keywords: [
 
 
 
-  authors: [{ name: "PocketReady Team" }],
+  authors: [{ name: "Pocket Ready" }],
   
   // Metadatos para Facebook/WhatsApp
   openGraph: {
@@ -58,7 +58,7 @@ keywords: [
     siteName: "PocketReady",
     title: "PocketReady | Strategic Survival Gear",
     description: "High-performance solutions for high-stakes environments.",
-    images: [{ url: "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/FullAresenalView.png", width: 1200, height: 630 }],
+    images: [{ url: "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png", width: 1200, height: 630 }],
   },
   
   // Metadatos para Twitter/X
@@ -66,7 +66,7 @@ keywords: [
     card: "summary_large_image",
     title: "PocketReady | Strategic Gear",
     description: "Deploying professional-grade survival solutions.",
-    images: ["/https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/FullAresenalView.png"],
+    images: ["https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png"],
   },
   
   // Verificación de buscadores y robots
@@ -121,8 +121,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "Store",
     "name": "PocketReady",
     "url": "https://pocket-ready.com/gears",
-    "logo": "https://www.pocket-ready.com/Logo.jpg",
-    "image": "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/ImgProducts.png",
+    "logo": "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/Logo.jpg",
+    "image": "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png",
     "description": "Tactical EDC and survival gear for everyday carry and preparedness.",
     "areaServed": "US"
   })}
