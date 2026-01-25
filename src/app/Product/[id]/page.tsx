@@ -20,7 +20,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
   return (
     <>
 
-    <Script
+   <Script
   id="json-ld-product"
   type="application/ld+json"
   dangerouslySetInnerHTML={{
@@ -31,24 +31,29 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
       "image": images[0],
       "description": product.description_en,
       "sku": id,
+      "category": "Tactical Gear / EDC",
       "brand": {
         "@type": "Brand",
-        "name": "PocketReady"
+        
+        "name": product.brand_name || "PocketReady Curated" 
       },
       "offers": {
         "@type": "Offer",
         "url": product.amazon_link,
         "priceCurrency": "USD",
-        "price": product.price,
+        "price": product.price, 
+        "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "Organization",
-          "name": "Amazon"
+          "name": "Amazon",
+          "url": "https://amazon.com"
         }
       }
     })
   }}
 />
+
 
 <Script
   id="json-ld-breadcrumb-product"

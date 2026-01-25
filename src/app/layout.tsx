@@ -27,10 +27,16 @@ export const metadata: Metadata = {
     default: "Survival Gear & Tactical Equipment for Everyday Carry | PocketReady",
     template: "%s | PocketReady"
   },
-  description: "Your primary loadout for high-stakes environments. Curated tactical intelligence and professional-grade survival hardware for the modern operator.",
-   icons:'https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/Logo.jpg'
+  description: "Join the PocketReady community. We curate the best tactical gear, survival kits, and everyday carry essentials to empower your preparedness movement. Explore our field-tested gear suggestions for the modern operator.",
 
-   ,
+icons: {
+    icon: [
+      { url: '/favicon.ico' }
+      
+    ]
+  },
+
+  
 keywords: [
   "survival gear",
   "tactical gear",
@@ -42,7 +48,15 @@ keywords: [
   'survival kit',
   'edc tools',
   'mission essentials',
-  "professional hardware"
+  "professional hardware",
+  "EDC community",
+    "tactical movement",
+    "best survival gear suggestions",
+    "everyday carry preparedness",
+    "tactical equipment reviews",
+    "survival kit curation",
+    "mission ready gear",
+    "PocketReady community"
 ],
 
 
@@ -61,13 +75,13 @@ keywords: [
     images: [{ url: "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png", width: 1200, height: 630 }],
   },
   
-  // Metadatos para Twitter/X
-  twitter: {
-    card: "summary_large_image",
-    title: "PocketReady | Strategic Gear",
-    description: "Deploying professional-grade survival solutions.",
-    images: ["https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png"],
-  },
+  // // Metadatos para Twitter/X
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "PocketReady | Strategic Gear",
+  //   description: "Deploying professional-grade survival solutions.",
+  //   images: ["https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png"],
+  // },
   
   // Verificación de buscadores y robots
   robots: {
@@ -114,17 +128,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 
 
-        {/* Ejemplo: JSON-LD (Datos Estructurados para Google Shopping) */}
-        <Script id="json-ld-store" type="application/ld+json">
+       
+        <Script id="json-ld-org" type="application/ld+json">
   {JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Store",
-    "name": "PocketReady",
-    "url": "https://pocket-ready.com/gears",
-    "logo": "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/Logo.jpg",
-    "image": "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png",
-    "description": "Tactical EDC and survival gear for everyday carry and preparedness.",
-    "areaServed": "US"
+    "@type": "Organization",
+    "name": "PocketReady Community",
+    "url": "https://pocket-ready.com",
+    "logo": "/favicon.ico",
+    "description": "A community movement dedicated to tactical preparedness and high-quality EDC gear curation.",
+    "knowsAbout": ["Tactical Gear", "Survival Skills", "Everyday Carry"]
   })}
 </Script>
 
