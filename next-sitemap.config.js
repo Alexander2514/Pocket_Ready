@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: 'https://pocket-ready.com',
-  generateRobotsTxt: true, // Esto genera tu robots.txt automáticamente
+  generateRobotsTxt: true, 
   exclude: ['/server-sitemap.xml'], 
   robotsTxtOptions: {
     additionalSitemaps: [

@@ -4,6 +4,7 @@ import { getAllProducts } from "../lib/db";
 import { FieldReports } from "../Components/FieldReports";
 import { EdcDoctrine } from "../Components/EdcDoctrine";
 import { SituationalAwareness } from "../Components/SituationalAwareness";
+import TheSovereign from "../Components/TheSovereign";
 import Link from "next/link";
 export const revalidate = 60; // Actualiza los datos cada 60 segundos
 export default async function Home() {
@@ -12,32 +13,43 @@ export default async function Home() {
   return (
     <main className="bg-zinc-900 min-h-screen text-white">
       
-      <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1504194103304-47b99fb9c53c?q=80&w=2070')] bg-cover bg-center grayscale" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-1" />
+   <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-20 overflow-hidden">
+  <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1504194103304-47b99fb9c53c?q=80&w=2070')] bg-cover bg-center grayscale" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-1" />
 
-        <div className="relative z-10 max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/20 border border-orange-500/50 text-orange-500 font-mono text-[10px] tracking-[0.5em] uppercase mb-8 animate-pulse">
-            <Terminal size={12} /> System Active // 2026
-          </div>
-          <h1 className="text-7xl md:text-[120px] font-black mb-6 tracking-tighter uppercase italic leading-[0.8]">
-            Stay <span className="text-transparent bg-clip-text bg-gradient-to-b from-orange-400 to-orange-700">Lethal</span>.
-          </h1>
-          <p className="max-w-xl mx-auto text-zinc-400 text-lg md:text-xl font-light leading-relaxed tracking-tight">
-            Tactical-grade hardware for high-stakes environments. We vet every tool so you don't have to. <span className="text-white font-bold italic">Excellence</span> isn't an option; it's a requirement for the modern operator.
-          </p>
-          <div className="mt-12 flex justify-center gap-6">
-            <div className="h-px w-20 bg-orange-500 self-center" />
-            <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Scroll to Explore Intel</span>
-            <div className="h-px w-20 bg-orange-500 self-center" />
-          </div>
-        </div>
-      </section>
+  <div className="relative z-10 max-w-5xl">
+    <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 border border-orange-500/30 text-orange-500 font-mono text-[9px] tracking-[0.4em] uppercase mb-6 animate-pulse">
+      <Terminal size={10} /> Intel Link Active // 2026
+    </div>
+
+    <h1 className="text-4xl md:text-[75px] font-black mb-6 tracking-tighter uppercase italic leading-[0.85] text-zinc-300">
+      Preparedness Fits <br className="hidden md:block" />
+      in Your <span className="text-transparent bg-clip-text bg-gradient-to-b from-orange-400 to-orange-700">Pocket</span>.
+    </h1>
+
+    <p className="max-w-lg mx-auto text-zinc-400 text-base md:text-lg font-light leading-relaxed tracking-tight mb-10">
+      Every tool is selected for <span className="text-zinc-200">function and durability</span>. 
+      Professional-grade gear, curated for the modern operator's daily life.
+    </p>
+
+    <div className="flex flex-col items-center gap-4">
+      <div className="flex justify-center gap-4">
+        <div className="h-px w-12 bg-orange-500/50 self-center" />
+        <span className="text-[9px] font-mono uppercase tracking-[0.3em] text-zinc-600">Scroll to Explore</span>
+        <div className="h-px w-12 bg-orange-500/50 self-center" />
+      </div>
+      <div className="w-px h-8 bg-gradient-to-b from-orange-500 to-transparent" />
+    </div>
+  </div>
+</section>
+
+    <TheSovereign/>
+
 
       <EdcDoctrine/>
 
     
-    <SituationalAwareness/>
+   
 
 
     <FieldReports/>
@@ -95,8 +107,9 @@ export default async function Home() {
       </section>
 
       
+     
+      <SituationalAwareness/>
 
-      
 
       
     </main>

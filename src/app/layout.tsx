@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     
 
   title: {
-    default: "Survival Gear & Tactical Equipment for Everyday Carry | PocketReady",
+    default: "Tools, Essentials & Smart Solutions for Everyday Life | PocketReady",
     template: "%s | PocketReady"
   },
   description: "Join the PocketReady community. We curate the best tactical gear, survival kits, and everyday carry essentials to empower your preparedness movement. Explore our field-tested gear suggestions for the modern operator.",
@@ -132,8 +132,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="json-ld-org" type="application/ld+json">
   {JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "PocketReady Community",
+    "@type": "WebSite",
+    "name": "Pocket Ready",
     "url": "https://pocket-ready.com",
     "logo": "/favicon.ico",
     "description": "A community movement dedicated to tactical preparedness and high-quality EDC gear curation.",

@@ -39,3 +39,10 @@ export async function getProductById(id: string) {
   if (error) return null;
   return data;
 }
+
+//Fields reports
+
+
+
+
+//TheSovereign

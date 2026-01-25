@@ -16,7 +16,7 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t border-zinc-800 text-zinc-500 py-12">
+    <footer className="bg-zinc-900 border-zinc-800 text-zinc-500 py-12">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           
@@ -42,7 +42,7 @@ export function Footer() {
             <h3 className="text-white font-bold mb-4 uppercase text-sm">Navigation</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="hover:text-orange-500 transition-colors">Mission Control</Link></li>
-              <li><Link href="#" className="hover:text-orange-500 transition-colors">Catalog</Link></li>
+              <li><Link href="#" className="hover:text-orange-500 transition-colors">Gear</Link></li>
               <li><Link href="#" className="hover:text-orange-500 transition-colors">About the Gear</Link></li>
             </ul>
           </div>

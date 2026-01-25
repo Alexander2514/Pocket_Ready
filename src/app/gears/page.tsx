@@ -3,12 +3,12 @@ import ProductCard from '../../Components/Productcard';
 import { Product } from '@//lib/db';
 import { getAllProducts } from '@//lib/db';
 export const metadata: Metadata = {
-  title: 'Full Tactical Catalog | POCKETREADY',
-  description: 'Complete inventory of mission-ready hardware. Explore our full range of tactical EDC and survival gear.',
+  title: 'EDC Foundations: Curated Gear for the Modern Operator | PocketReady',
+  description: 'A curated collection of everyday tools designed for real life. Discover compact, versatile EDC essentials built to adapt to your routine — practical, portable, and ready whenever you need them.',
   openGraph: {
-    title: 'POCKETREADY Arsenal | All Products',
-    description: 'Direct access to our complete tactical equipment inventory.',
-    images: ['https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/FullAresenalView.png'], 
+    title: 'PocketReady | The Essential EDC Loadout Builder',
+    description: 'Build your ultimate Everyday Carry from the ground up. Explore our community-vetted selection of essential tools and survival kits designed for high-stakes reliability.'
+     
   },
 };
 export const revalidate = 60; // Actualiza los datos cada 60 segundos
