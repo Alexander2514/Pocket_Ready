@@ -40,3 +40,24 @@
     animation: force-color 3s infinite;
   }
 }
+
+
+
+/* Estilo para navegadores basados en WebKit (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px; /* Altura para scroll horizontal */
+  width: 4px;  /* Ancho para scroll vertical */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #09090b; /* zinc-950 para el fondo */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3f3f46; /* zinc-600 para la barra */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #f97316; /* safety-orange al pasar el mouse */
+}

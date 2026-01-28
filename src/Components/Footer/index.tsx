@@ -34,24 +34,25 @@ export function Footer() {
               
               
               <Instagram className="hover:text-white cursor-pointer transition-colors" size={20} />
-              <Mail className="hover:text-white cursor-pointer transition-colors" size={20} />
+              <a href='mailto:pocketready746@gmail.com'>              <Mail className="hover:text-white cursor-pointer transition-colors" size={20} />
+</a>
             </div>
           </div>
 
           <div>
             <h3 className="text-white font-bold mb-4 uppercase text-sm">Navigation</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="hover:text-orange-500 transition-colors">Mission Control</Link></li>
-              <li><Link href="#" className="hover:text-orange-500 transition-colors">Gear</Link></li>
-              <li><Link href="#" className="hover:text-orange-500 transition-colors">About the Gear</Link></li>
+             
+              <li><Link href="/gears" className="hover:text-orange-500 transition-colors">Gear</Link></li>
+              <li><Link href="/about-the-gear" className="hover:text-orange-500 transition-colors">About the Gear</Link></li>
             </ul>
           </div>
 
           <div>
              <h3 className="text-white font-bold mb-4 uppercase text-sm">Legal</h3>
              <ul className="space-y-2 text-sm">
-               <li><Link href="#" className="hover:text-white">Privacy Policy</Link></li>
-               <li><Link href="#" className="hover:text-white">Terms of Service</Link></li>
+               <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
+               <li><Link href="/terms" className="hover:text-white">Terms of Service</Link></li>
              </ul>
           </div>
         </div>

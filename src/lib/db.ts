@@ -1,4 +1,4 @@
-export const revalidate = 0; // <--- ESTA LÍNEA OBLIGA A REVISAR DATOS NUEVOS SIEMPRE
+export const revalidate = 1000; // <--- ESTA LÍNEA OBLIGA A REVISAR DATOS NUEVOS SIEMPRE
 
 
 

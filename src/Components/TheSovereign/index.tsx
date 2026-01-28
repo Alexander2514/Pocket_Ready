@@ -24,7 +24,7 @@ const TheSovereign = () => {
           </p>
         </div>
 
-        <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide no-scrollbar">
+        <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide no-scrollbar custom-scrollbar">
           {pillars.map((item, index) => (
             <div 
               key={index} 

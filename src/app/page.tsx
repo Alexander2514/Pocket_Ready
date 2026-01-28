@@ -6,12 +6,13 @@ import { EdcDoctrine } from "../Components/EdcDoctrine";
 import { SituationalAwareness } from "../Components/SituationalAwareness";
 import TheSovereign from "../Components/TheSovereign";
 import Link from "next/link";
-export const revalidate = 60; // Actualiza los datos cada 60 segundos
+export const revalidate = 1000; 
 export default async function Home() {
   const products = await getAllProducts();
   
   return (
     <main className="bg-zinc-900 min-h-screen text-white">
+      
       
    <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-20 overflow-hidden">
   <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1504194103304-47b99fb9c53c?q=80&w=2070')] bg-cover bg-center grayscale" />

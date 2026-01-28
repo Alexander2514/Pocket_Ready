@@ -6,7 +6,7 @@ import ImageGallery from "./ImageGallery";
 import Script from "next/script";
 
 
-export const revalidate = 60; // Actualiza los datos cada 60 segundos
+export const revalidate = 1000; 
 export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
 
   const { id } = await params; 
