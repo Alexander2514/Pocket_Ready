@@ -24,7 +24,7 @@ export default function ProductCard({ title, price, image, rating, link, id, is_
         </div>
       )}
 
-      <Link href={`/Product/${id}`} className="cursor-pointer">
+      <Link href={`/product/${id}`} className="cursor-pointer">
        
         <div className="relative h-60 w-full bg-zinc-50 flex items-center justify-center overflow-hidden brightness-75">
           <img 
@@ -43,7 +43,7 @@ export default function ProductCard({ title, price, image, rating, link, id, is_
           <p className='text-zinc-400'>{rating}</p>
         </div>
         
-        <Link href={`/Product/${id}`} className="hover:text-safety-orange transition-colors">
+        <Link href={`/product/${id}`} className="hover:text-safety-orange transition-colors">
           <h3 className="text-sm font-bold text-zinc-300 line-clamp-2 mb-4 uppercase tracking-tight leading-snug">
             {title}
           </h3>
