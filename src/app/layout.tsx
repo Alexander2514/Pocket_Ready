@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     
 
   title: {
-    default: "Tools, Essentials & Smart Solutions for Everyday Life | PocketReady",
-    template: "%s | PocketReady"
+    default: "Tools, Essentials & Smart Solutions for Everyday Life | Pocket Ready",
+    template: "%s | Pocket Ready"
   },
   description: "Join the PocketReady community. We curate the best tactical gear, survival kits, and everyday carry essentials to empower your preparedness movement. Explore our field-tested gear suggestions for the modern operator.",
 
@@ -64,15 +64,15 @@ keywords: [
 
   authors: [{ name: "Pocket Ready" }],
   
-  // Metadatos para Facebook/WhatsApp
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://pocket-ready.com/", 
-    siteName: "PocketReady",
+    siteName: "Pocket Ready",
     title: "PocketReady | Strategic Survival Gear",
     description: "High-performance solutions for high-stakes environments.",
-    images: [{ url: "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png", width: 1200, height: 630 }],
+    images: [{ url: "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png", width: 1200, height: 630 }
+    ],
   },
   
   // // Metadatos para Twitter/X
@@ -93,6 +93,13 @@ keywords: [
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
+    },
+  },
+
+  alternates: {
+    canonical: 'https://pocket-ready.com',
+    languages: {
+      'en-US': 'https://pocket-ready.com', 
     },
   },
 };
@@ -138,7 +145,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "logo": "/favicon.ico",
     "description": "A community movement dedicated to tactical preparedness and high-quality EDC gear curation.",
     "knowsAbout": ["Tactical Gear", "Survival Skills", "Everyday Carry"]
-  })}
+  },
+  
+  )}
 </Script>
 
 
