@@ -1,8 +1,11 @@
+'use client';
 import { ShoppingCart, Star, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { Product } from '../../types/Product';
-
+import { useCurrency } from '../../context/CurrencyContext';
 export default function ProductCard({ title, price, image, rating, link, id, is_featured }: Product) {
+  const { formatPrice, isLoading } = useCurrency(); // <--- Mover aquí
+
   const getImageUrl = (data: any): string => {
     if (Array.isArray(data)) return data[0];
     if (typeof data === 'string') {
@@ -50,7 +53,7 @@ export default function ProductCard({ title, price, image, rating, link, id, is_
         </Link>
         
         <div className="mt-auto pt-4 flex items-center justify-between border-t border-zinc-800/50">
-          <span className="text-xl font-black text-safety-orange italic">${price}</span>
+          <span className="text-xl font-black text-safety-orange italic">{isLoading ? '...' : formatPrice(Number(price))}</span>
           <a 
             href={link}
             target="_blank"

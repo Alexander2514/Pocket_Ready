@@ -5,7 +5,7 @@ import "./globals.css";
 import {Navbar} from "../Components/Navbar";
 import {Footer} from "../Components/Footer";
 import Script from "next/script";
-
+import { CurrencyProvider } from "../context/CurrencyContext";
 const inter = Inter({ subsets: ["latin"] });
 
 // Configuración de visualización para móviles
@@ -111,15 +111,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <body className={`${inter.className} min-h-screen flex flex-col bg-[#080808] text-zinc-400`} suppressHydrationWarning>
         
+        <CurrencyProvider>
 
         <Navbar />
+
+          
         <main className="flex-grow">
           {children}
         </main>
+
+
         <Footer />
 
 
-    
+            </CurrencyProvider>
+
     <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-78W3ZQVPE2"
           strategy="afterInteractive" 

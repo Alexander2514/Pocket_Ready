@@ -6,9 +6,17 @@ import { EdcDoctrine } from "../Components/EdcDoctrine";
 import { SituationalAwareness } from "../Components/SituationalAwareness";
 import TheSovereign from "../Components/TheSovereign";
 import Link from "next/link";
+
 export const revalidate = 1000; 
+
 export default async function Home() {
+
+  
   const products = await getAllProducts();
+ 
+
+
+
   
   return (
     <main className="bg-zinc-900 min-h-screen text-white">
