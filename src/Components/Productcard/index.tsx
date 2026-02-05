@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Product } from '../../types/Product';
 import { useCurrency } from '../../context/CurrencyContext';
 export default function ProductCard({ title, price, image, rating, link, id, is_featured }: Product) {
-  const { formatPrice, isLoading } = useCurrency(); // <--- Mover aquí
+  const { formatPrice, isLoading } = useCurrency();
 
   const getImageUrl = (data: any): string => {
     if (Array.isArray(data)) return data[0];

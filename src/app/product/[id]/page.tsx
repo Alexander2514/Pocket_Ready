@@ -4,11 +4,12 @@ import { notFound } from "next/navigation";
 import { Shield, Zap, Truck, RotateCcw, Package, Globe } from "lucide-react";
 import ImageGallery from "./ImageGallery";
 import Script from "next/script";
-
+import { useCurrency } from "../../../context/CurrencyContext";
 
 export const revalidate = 1000; 
 export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
-
+    const { formatPrice, isLoading } = useCurrency();
+  
   const { id } = await params; 
   const product = await getProductById(id);
   if (!product) return notFound();
@@ -107,7 +108,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
   </h1>
 
   <div className="flex items-baseline gap-2 mb-6">
-    <span className="text-3xl xl:text-3xl font-light tracking-tighter italic text-zinc-300">${product.price}</span>
+    <span className="text-3xl xl:text-3xl font-light tracking-tighter italic text-zinc-300">${isLoading ? '...' : formatPrice(Number(product.price))}</span>
     <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">USD</span>
   </div>
 

@@ -21,18 +21,18 @@ export function FieldReports(){
                   </p>
                 </div>
                 
-                <a href="/blog" className="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-safety-orange transition-colors">
+                <a href="/field-reports" className="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-safety-orange transition-colors">
                   View All Logs
                   <span className="block h-[1px] w-8 bg-zinc-700 group-hover:bg-safety-orange transition-colors" />
                 </a>
               </div>
     
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {intelReports.map((report, index) => (
+                {intelReports.slice(0,6).map((report, index) => (
         <a 
           key={report.id}
-          href={report.link}
-          target="_blank"
+          href={`/field-report/${report.id}`}
+          // target="_blank"
           style={{ animationDelay: `${index * 1.5}s` }} 
           className="group block relative bg-zinc-900/30 border border-zinc-800/50 overflow-hidden rounded-xl transition-all duration-500 
                      animate-mobile-scan 

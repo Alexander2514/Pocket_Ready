@@ -24,7 +24,7 @@ export async function getAllProducts() {
     .select('id,title_en,description_en,price,image_url,amazon_link,rating,is_featured')    
     .order("is_featured", { ascending: false });
 
-  if (error) throw new Error(error.message);
+  // if (error) throw new Error(error.message);
   
   return data;
 }
