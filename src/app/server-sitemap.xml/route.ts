@@ -21,7 +21,7 @@ export async function GET() {
 
  
   const intelFields: ISitemapField[] = intelReports.map((report) => ({
-    loc: `https://pocket-ready.com/field-reports/${report.id}`,
+    loc: `https://pocket-ready.com/field-report/${report.id}`,
     lastmod: new Date().toISOString(), 
     changefreq: 'weekly' as const,
     priority: 0.8,
