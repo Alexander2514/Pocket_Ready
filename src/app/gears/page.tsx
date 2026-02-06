@@ -29,7 +29,7 @@ export default async  function Gears() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {products.map((product) => {
+          {products?.map((product) => {
               // Limpiamos el objeto para que sea un objeto plano (POJO)
               const cleanProduct = JSON.parse(JSON.stringify(product));
               

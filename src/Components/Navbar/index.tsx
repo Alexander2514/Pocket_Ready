@@ -21,12 +21,11 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Menú Desktop (Oculto en móvil) */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <Link href="/" className="hover:text-orange-500 transition-colors px-3 py-2 text-sm font-medium">Home</Link>
               <Link href="/gears" className="hover:text-orange-500 transition-colors px-3 py-2 text-sm font-medium">Gear</Link>
-              <Link href="#about" className="text-zinc-500 hover:text-orange-500 transition-colors px-3 py-2 text-sm font-medium">About us</Link>
+              <Link href="/field-reports" className="hover:text-orange-500 transition-colors px-3 py-2 text-sm font-medium">Fiel Reports</Link>
             </div>
           </div>
 
@@ -60,11 +59,11 @@ const Navbar = () => {
             Gear
           </Link>
           <Link 
-            href="#about" 
+            href="/field-reports" 
             onClick={() => setIsOpen(false)}
             className="text-zinc-500 hover:text-orange-500 block px-3 py-4 text-base font-medium uppercase tracking-widest"
           >
-            About us
+            field Reports
           </Link>
         </div>
       </div>

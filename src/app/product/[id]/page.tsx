@@ -1,14 +1,36 @@
-// src/app/Product/[id]/page.tsx
 import { getProductById } from "../../../lib/db";
 import { notFound } from "next/navigation";
 import { Shield, Zap, Truck, RotateCcw, Package, Globe } from "lucide-react";
 import ImageGallery from "./ImageGallery";
 import Script from "next/script";
-import { useCurrency } from "../../../context/CurrencyContext";
+import { Metadata } from 'next';
+import PriceDisplay from "./priceDisplay";
 
 export const revalidate = 1000; 
+
+
+// --- FUNCIÓN DE METADATOS ---
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const product = await getProductById(id);
+  
+  if (!product) return { title: "Product Not Found" };
+
+  return {
+    title: product.title_en ,
+    description: product.description_en,
+    openGraph: {
+      title: product.title_en,
+      description: product.description_en,
+      images: Array.isArray(product.image_url) ? product.image_url : [product.image_url],
+      type: 'website',
+    },
+  };
+}
+
+
+
 export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
-    const { formatPrice, isLoading } = useCurrency();
   
   const { id } = await params; 
   const product = await getProductById(id);
@@ -99,18 +121,13 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
   </div>
 
           <div className="flex flex-col justify-center pt-8">
-  <span className="text-safety-orange/60 font-mono text-sm tracking-[0.5em] uppercase mb-4 opacity-70">
-    // INTEL_REPORT_{id.slice(0,4)}
-  </span>
   
-  <h1 className="text-3xl md:text-5xl xl:text-5xl font-black leading-none italic uppercase tracking-tighter mb-8">
+  
+  <h1 className="text-3xl md:text-5xl xl:text-5xl font-black leading-none italic uppercase tracking-tighter mb-8 text-zinc-300">
     {product.title_en}
   </h1>
 
-  <div className="flex items-baseline gap-2 mb-6">
-    <span className="text-3xl xl:text-3xl font-light tracking-tighter italic text-zinc-300">${isLoading ? '...' : formatPrice(Number(product.price))}</span>
-    <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">USD</span>
-  </div>
+  <PriceDisplay price={Number(product.price)} />
 
   <p className="text-zinc-400 ttext-base lg:text-lg leading-relaxed mb-12 border-l-2 border-safety-orange/30 pl-6 italic max-w-2xl font-light">
     {product.description_en}

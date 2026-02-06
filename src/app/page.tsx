@@ -96,9 +96,9 @@ export default async function Home() {
   </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" 
         id="Catalog">
-          {products.slice(0,6).map((product) => {
+          {(products ?? []).slice(0,6).map((product) => {
     // Limpiamos el objeto para que sea un objeto plano (POJO)
-    const cleanProduct = JSON.parse(JSON.stringify(product));
+    const cleanProduct =   JSON.parse(JSON.stringify(product));
     
     return (
       <ProductCard 
