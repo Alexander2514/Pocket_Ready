@@ -23,7 +23,7 @@ export default async function Home() {
       
       
    <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-20 overflow-hidden">
-  <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1504194103304-47b99fb9c53c?q=80&w=2070')] bg-cover bg-center grayscale" />
+  <div className="absolute inset-0 z-0 opacity-20"/>
   <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-1" />
 
   <div className="relative z-10 max-w-5xl">
@@ -36,9 +36,8 @@ export default async function Home() {
       in Your <span className="text-transparent bg-clip-text bg-gradient-to-b from-orange-400 to-orange-700">Pocket</span>.
     </h1>
 
-    <p className="max-w-lg mx-auto text-zinc-400 text-base md:text-lg font-light leading-relaxed tracking-tight mb-10">
-      Every tool is selected for <span className="text-zinc-200">function and durability</span>. 
-      Professional-grade gear, curated for the modern operator's daily life.
+    <p className="max-w-lg mx-auto text-zinc-200 text-base md:text-lg font-light leading-relaxed tracking-tight mb-10">
+     Field-tested tools, intelligence-driven guidance, and everyday readiness for those who take responsibility seriously. 
     </p>
 
     <div className="flex flex-col items-center gap-4">

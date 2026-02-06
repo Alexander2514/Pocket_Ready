@@ -25,7 +25,7 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link href="/" className="hover:text-orange-500 transition-colors px-3 py-2 text-sm font-medium">Home</Link>
               <Link href="/gears" className="hover:text-orange-500 transition-colors px-3 py-2 text-sm font-medium">Gear</Link>
-              <Link href="/field-reports" className="hover:text-orange-500 transition-colors px-3 py-2 text-sm font-medium">Fiel Reports</Link>
+              <Link href="/field-reports" className="hover:text-orange-500 transition-colors px-3 py-2 text-sm font-medium">Field Reports</Link>
             </div>
           </div>
 

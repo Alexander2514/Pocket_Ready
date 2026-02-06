@@ -34,9 +34,7 @@ const TheSovereign = () => {
                 <div className="p-3 bg-zinc-900 border border-zinc-800 group-hover:border-orange-500/50 transition-colors">
                   <item.icon className="text-orange-500" size={24} />
                 </div>
-                <span className="font-mono text-[10px] text-zinc-700 group-hover:text-orange-900 transition-colors">
-                  0{index + 1} // OPERATIONAL_PILLAR
-                </span>
+                
               </div>
 
               <h3 className="text-xl font-bold text-zinc-300 uppercase italic mb-6 tracking-tight flex items-center gap-3">

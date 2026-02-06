@@ -19,13 +19,12 @@ export default async  function Gears() {
 
   return (
     
-    <main className="min-h-screen bg-zinc-900 pt-24 pb-20 px-4">
+    <main className="min-h-screen bg-zinc-1000 pt-24 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
         <header className="mb-16 border-l-4 border-safety-orange pl-6">
-          <h1 className="text-4xl font-black text-white italic uppercase tracking-tighter">
-            Full Arsenal <span className="text-zinc-700">/ Inventory</span>
+          <h1 className="text-4xl font-black text-zinc-300 italic uppercase tracking-tighter">
+            Full Gear 
           </h1>
-          <p className="text-zinc-500 mt-2 font-mono text-sm">SECURE ACCESS // ALL UNITS AVAILABLE</p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">

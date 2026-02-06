@@ -17,8 +17,8 @@ export default function FieldReportsPage() {
       <div className="max-w-7xl mx-auto">
         
         <header className="mb-16 border-l-4 border-safety-orange pl-6">
-          <h1 className="text-4xl md:text-6xl font-black text-zinc-300 italic uppercase tracking-tighter">
-            Field <span className="text-zinc-800">Reports</span>
+          <h1 className="text-2xl md:text-4xl font-black text-zinc-300 italic uppercase tracking-tighter">
+            Field Reports
           </h1>
           
         </header>

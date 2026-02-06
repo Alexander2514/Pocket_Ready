@@ -69,10 +69,11 @@ keywords: [
     locale: "en_US",
     url: "https://pocket-ready.com/", 
     siteName: "Pocket Ready",
-    title: "PocketReady | Strategic Survival Gear",
-    description: "High-performance solutions for high-stakes environments.",
-    images: [{ url: "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png", width: 1200, height: 630 }
-    ],
+    title: "PocketReady | Operational Readiness Platform",
+description: "Equipment, knowledge, and systems designed for modern survival and everyday readiness.",
+
+    // images: [{ url: "https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/view_website.png", width: 1200, height: 630 }
+    // ],
   },
   
   // // Metadatos para Twitter/X

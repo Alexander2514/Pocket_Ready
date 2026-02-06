@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: report.title ,
       description: report.excerpt,
       type: 'article',
-      images: [report.image || 'https://ahmdmnoxdroarbooanyg.supabase.co/storage/v1/object/public/images/Assets/img_index.webp'],
+      images: [report.image],
     },
   };
 }
@@ -83,10 +83,13 @@ export default async function ReportDetail({ params }: Props) {
           </article>
 
           <section className="space-y-6">
-            <div className="flex items-center gap-4">
-              <h2 className="text-[11px] font-mono uppercase tracking-[0.3em] text-zinc-500 whitespace-nowrap">Additional reading from trusted organizations and experts.</h2>
-              <div className="h-[1px] w-full bg-zinc-900" />
-            </div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full overflow-hidden">
+            <h2 className="text-[10px] md:text-[11px] font-mono uppercase tracking-[0.3em]          text-zinc-500 leading-relaxed max-w-full sm:max-w-[60%]">
+              Additional reading from trusted organizations and experts.
+            </h2>
+  
+           <div className="h-[1px] flex-grow bg-zinc-900 hidden xs:block w-full" />
+          </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {report.link.map((url, index) => (
@@ -113,13 +116,25 @@ export default async function ReportDetail({ params }: Props) {
 
                   <ExternalLink size={16} className="text-zinc-700 group-hover:text-orange-500 transition-colors translate-x-0 group-hover:-translate-y-1 group-hover:translate-x-1" />
                 </a>
-              ))}
+                
+
+              )
+              
+              )}
               
             </div>
+
+           
+    <p className="text-[10px] md:text-xs font-mono text-zinc-300 uppercase tracking-[0.2em] leading-relaxed">
+      Sources open in external domains. <br className="hidden md:block" />
+      PocketReady does not control third-party content.
+    </p>
           </section>
 
           <footer className="mt-32 pt-12 border-t border-zinc-900">
-            <span className="text-[12x] font-mono text-zinc-400 uppercase tracking-widest block mb-2">Sources open in external domains. PocketReady does not control third-party content.</span>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    
+
             <Link href={`/field-report/${nextReport.id}`} className="group flex justify-between items-center group">
               <div>
                 
@@ -132,6 +147,7 @@ export default async function ReportDetail({ params }: Props) {
                 <ChevronRight size={20} className="text-zinc-600 group-hover:text-orange-500" />
               </div>
             </Link>
+            </div>
           </footer>
         </div>
       </main>
