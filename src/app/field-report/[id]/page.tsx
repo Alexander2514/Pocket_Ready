@@ -19,6 +19,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: report.title ,
     description: report.excerpt,
+    
+    alternates: {
+      canonical: `https://pocket-ready.com/field-report/${id}`,
+    },
     openGraph: {
       title: report.title ,
       description: report.excerpt,

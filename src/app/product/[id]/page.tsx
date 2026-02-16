@@ -5,6 +5,7 @@ import ImageGallery from "./ImageGallery";
 import Script from "next/script";
 import { Metadata } from 'next';
 import PriceDisplay from "./priceDisplay";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
 
 export const revalidate = 1000; 
 
@@ -19,6 +20,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title: product.title_en ,
     description: product.description_en,
+    alternates: {
+      canonical: `https://pocket-ready.com/product/${id}`,
+    },
     openGraph: {
       title: product.title_en,
       description: product.description_en,
@@ -129,14 +133,24 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
 
   <PriceDisplay price={Number(product.price)} />
 
-  <p className="text-zinc-400 ttext-base lg:text-lg leading-relaxed mb-12 border-l-2 border-safety-orange/30 pl-6 italic max-w-2xl font-light">
-    {product.description_en}
-  </p>
+  {/* Busca donde renderizas la descripción y cámbialo por esto: */}
+<div className="space-y-6">
+  {product.description_en
+    .split(/\\n\\n|\n\n|\/n \/n/) // Detecta \n\n literal, salto de línea real, o /n /n
+    .map((paragraph: string, index: Key | null | undefined) => (
+      <p 
+        key={index} 
+        className="leading-relaxed text-[17px] text-zinc-400 font-light opacity-90"
+      >
+        {paragraph.trim()}
+      </p>
+    ))}
+</div>
 
             <a 
               href={product.amazon_link}
               target="_blank"
-              className="w-full bg-safety-orange hover:bg-orange-600 text-white text-center font-bold text-sm py-4 rounded-lg transition-all duration-300 uppercase tracking-widest shadow-lg shadow-orange-900/20"
+              className="w-full bg-safety-orange hover:bg-orange-600 text-white text-center font-bold text-sm py-4 rounded-lg transition-all duration-300 uppercase tracking-widest shadow-lg shadow-orange-900/20 mt-10"
             >
               buy on Amazon
             </a>
